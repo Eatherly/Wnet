@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="libs/normolize.css">
+        <link rel="stylesheet" href="libs/bootstrap.min.css">
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h1>Search by contract id</h1> 
+                    <form id="searchform" method="post" style="display: inline-block;"> 
+                        <div>  
+                            <em class="incorrect">this base has not object with such data <br></em> 
+                            <label for="search_term"></label> 
+                            <input type="text" name="search_term" id="search_contract" />
+                            <input type="submit" value="search" id="search_contract_button" /> <br>
+                        </div> 
+
+                        <input type="checkbox" name="work" id="work" checked>work <br>
+                        <input type="checkbox" name="connecting" id="connecting" checked>connecting <br>
+                        <input type="checkbox" name="disconnected" id="disconnected" checked>disconnected <br>   
+
+                    </form> 
+                    <hr>
+                    <table class="print" style="display: none">
+                        <tr>
+                            <td colspan=2><b>информация про клиента</b></td>
+                        </tr>
+                        <tr>
+                            <td >название клиента</td>
+                            <td id="customer_name">[name_customer]</td>
+                        </tr>
+                        <tr>
+                            <td >компания</td>
+                            <td id="company">[ company]</td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><b>информация про договор</b></td>
+                        </tr>
+                        <tr>
+                            <td >номер договора</td>
+                            <td id="number"></td>
+                        </tr>
+                        <tr>
+                            <td >дата подписания</td>
+                            <td id="date"></td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><b>Cервисы и их статус</b></td>
+                        </tr>
+                        <tr>
+                            <td id="services" colspan=2></td>
+                            <!-- в services_name вывести название сервисов через <br> --> 
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-7 right_column">
+                    <p>TASK: Необходимо реализовать  класс, который  будет использоваться для печати документов. На вход передается id_contract, по которому нужно найти привязанного клиента и привязанные сервисы. <br><br>
+                        Можно вводить номер контракта ( 011 , 012 , 021, 023и т.д.) или его id в БД(1,2,3 и т.д.);<br>
+                        В этом поле проводится валидация на цифры (ввод литер не возможен);<br>
+                        При предварительном выставлении предпочтений в "чекбокс" в ответе идет фильтрация по статусу сервиса(можно комбинировать);<br>
+                        При вводе несуществующих данных на странице появляется соответствующая информация<br></p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <script src="libs/jquery-3.2.1.min.js"></script>
+        <script src="script/js.js"></script>
+
+    </body>
+</html>
